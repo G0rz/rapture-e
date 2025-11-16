@@ -7,7 +7,7 @@ export default async function Page({
 }) {
     const {id} = await params;
 
-    if (!id) {
+    if (id) {
         return notFound()
     }
 

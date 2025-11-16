@@ -5,7 +5,7 @@ export interface Product {
     collectorNumber?: string;
     foil?: string;
     rarity?: ValidRarity;
-    image?: string;
+    image?: string | undefined;
     quantity?: number;
     manaBoxID?: number;
     price?: number | null;

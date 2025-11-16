@@ -1,15 +1,14 @@
 import {Product} from "@/interfaces";
+import {ProductGridItem} from "@/components";
 
 interface Props {
     products: Product[]
 }
 
 export const ProductGrid = ({products}: Props) => {
-    return (<div className="grid grid-cols-2 md:grid-cols-3 gap-10">
+    return (<div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {products.map((product, index) => {
-                return <span key={index}>
-                    {product.name}
-                </span>
+                return <ProductGridItem key={index} product={product}/>
             })}
         </div>
     );
