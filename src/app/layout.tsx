@@ -15,9 +15,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="es">
       <body
-        className={`${geistSans.variable} ${geistMono.variable}`}
+        className={`${geistSans.variable} ${geistMono.variable} light`}
       >
       <ViewTransition enter="slide-in" exit="slide-out">
           <main className="min-h-screen bg-zinc-50 font-sans dark:bg-black antialiased">

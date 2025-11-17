@@ -2,6 +2,7 @@
 import Link from "next/link";
 import {IoCartOutline, IoSearchOutline} from "react-icons/io5"
 import {usePathname} from "next/navigation";
+import {useUIStore} from "@/store";
 
 const routes = [
     {
@@ -27,9 +28,11 @@ const routes = [
 
 export const TopMenu = () => {
     const pathname = usePathname();
+    const openMenu = useUIStore(state => state.openSideMenu);
+
     return (<nav className="w-full flex px-5 justify-between items-center">
             <div>
-                <Link href="/" className="font-mono font-bold">Rapture Board Games | Store </Link>
+                <Link href="/" className="font-mono font-bold">Rapture Board Games</Link>
             </div>
             <div className="hidden md:block">
                 {routes.map((route, index) => {
@@ -46,7 +49,7 @@ export const TopMenu = () => {
                     <span
                         className="absolute -top-2 -right-2 px-1 rounded-full bg-primary text-xs font-bold font-mono">5</span>
                 </Link>
-                <button className="m-2 px-3 py-2 rounded-full transition-all hover:bg-primary/30 hover:font-bold">Menu
+                <button className="m-2 px-3 py-2 rounded-full transition-all hover:bg-primary/30 hover:font-bold" onClick={openMenu}>Menu
                 </button>
             </div>
         </nav>
